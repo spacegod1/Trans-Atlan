@@ -31,16 +31,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 bg-[#0d1117]`}
-    >
+    <nav className={`fixed w-full z-50 transition-all duration-300 bg-white`}>
       <div className=" mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <Image src={Logo} alt="Company Logo" className="w-[12rem] h-[6rem]" />
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex justify-center items-center gap-[3.5rem] text-[14px] text-white">
+          <ul className="hidden md:flex justify-center items-center gap-[3.5rem] text-[14px] text-black">
             <li className="flex justify-center items-center gap-1 hover:text-yellow-400 cursor-pointer">
               ABOUT
             </li>

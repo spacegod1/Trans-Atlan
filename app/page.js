@@ -119,7 +119,7 @@ export default function Home() {
   };
 
   return (
-    <section className="relative h-full pt-6 text-white scrollbar-custom overflow-y-auto bg-[#0d1117]">
+    <section className="relative h-full pt-6 text-white scrollbar-custom overflow-y-auto bg-white">
       {/* Hero Text Section */}
       <div
         className="absolute z-10 px-4 sm:px-10 
@@ -130,7 +130,7 @@ export default function Home() {
         text-center sm:text-left"
       >
         <h3
-          className={`text-2xl sm:text-[4rem] lg:text-[2.5rem] ${montserrat.className} 
+          className={`text-2xl text-black sm:text-[4rem] lg:text-[2.5rem] ${montserrat.className} 
           max-w-[20rem] sm:max-w-none mx-auto sm:mx-0`}
         >
           Transforming Global Energy Resources
