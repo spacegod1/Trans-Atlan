@@ -119,7 +119,7 @@ export default function Home() {
   };
 
   return (
-    <section className="relative h-full pt-6 text-white scrollbar-custom overflow-y-auto">
+    <section className="relative h-full pt-6 text-white scrollbar-custom overflow-y-auto bg-[#0d1117]">
       {/* Hero Text Section */}
       <div
         className="absolute z-10 px-4 sm:px-10 

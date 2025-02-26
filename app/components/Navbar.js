@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 bg-[#23486A]`}
+      className={`fixed w-full z-50 transition-all duration-300 bg-[#0d1117]`}
     >
       <div className=" mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
