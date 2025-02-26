@@ -130,7 +130,7 @@ export default function Home() {
         text-center sm:text-left"
       >
         <h3
-          className={`text-2xl text-black sm:text-[4rem] lg:text-[2.5rem] ${montserrat.className} 
+          className={`text-2xl text-white sm:text-[4rem] lg:text-[2.5rem] ${montserrat.className} 
           max-w-[20rem] sm:max-w-none mx-auto sm:mx-0`}
         >
           Transforming Global Energy Resources
