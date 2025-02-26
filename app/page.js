@@ -235,7 +235,7 @@ export default function Home() {
           alt="Petroleum engineer"
           className="h-[20rem] sm:h-[25rem] lg:h-[30rem]"
         />
-        <div className="px-[4rem] mt-8 lg:mt-0">
+        <div className="px-[4rem] mt-8 lg:mt-0 text-black">
           <h3 className={`${montserrat.className} text-3xl mb-5 `}>
             Our Operations
           </h3>
