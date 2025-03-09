@@ -6,12 +6,14 @@ import Logo from "../../public/TransAtlanLogo.png";
 import { GoPlus } from "react-icons/go";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import { Prompt } from "next/font/google";
+import Link from "next/link";
 
 const prompt = Prompt({
   subsets: ["latin"],
   weight: "300",
   display: "swap",
-});
+  });
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,24 +39,36 @@ export default function Navbar() {
       <div className=" mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
+          <Link href="/">
           <Image src={Logo} alt="Company Logo" className="w-[12rem] h-[6rem]" />
+          </Link>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex justify-center items-center gap-[3.5rem] text-[14px] text-white">
+          <Link href="/about">
             <li className="flex justify-center items-center gap-1 hover:text-yellow-400 cursor-pointer">
               ABOUT
             </li>
+            </Link>
+            <Link href="#">
             <li className="flex justify-center items-center gap-2 hover:text-yellow-400 cursor-pointer">
               PROJECTS <FaChevronDown size={10} />
             </li>
+            </Link>
+            <Link href="/services">
             <li className="flex justify-center items-center gap-2 hover:text-yellow-400 cursor-pointer">
               SERVICES
               <FaChevronDown size={10} />
             </li>
+            </Link>
+            <Link href="#">
             <li className="hover:text-yellow-400 cursor-pointer">CAREERS</li>
+            </Link>
+            <Link href="#">
             <li className="hover:text-yellow-400 cursor-pointer">
               NEWS RELEASE
             </li>
+            </Link>
           </ul>
 
           {/* Mobile menu button */}
@@ -77,17 +91,27 @@ export default function Navbar() {
       >
         <div className="flex flex-col pt-20 px-6">
           <ul className={`${prompt.className} flex flex-col gap-6 text-white`}>
+          <Link href="/about">
             <li className="hover:text-yellow-400 cursor-pointer">ABOUT</li>
+            </Link>
+            <Link href="#">
             <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
               PROJECTS <FaChevronDown size={10} />
             </li>
+            </Link>
+            <Link href="/services">
             <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer">
               SERVICES <FaChevronDown size={10} />
             </li>
+            </Link>
+            <Link href="#">
             <li className="hover:text-yellow-400 cursor-pointer">CAREERS</li>
+            </Link>
+            <Link href="#">
             <li className="hover:text-yellow-400 cursor-pointer">
               NEWS RELEASE
             </li>
+            </Link>
           </ul>
         </div>
       </div>
