@@ -55,31 +55,37 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex justify-center items-center gap-[3.5rem] text-[14px] text-white">
           <Link href="/about">
-            <li className={`flex justify-center items-center gap-1 cursor-pointer transition-colors duration-300 ${
+            <li className={`flex justify-center items-center gap-1 cursor-pointer relative group ${
               isActivePage('/about') ? 'text-yellow-400' : 'hover:text-yellow-400'
             }`}>
               ABOUT
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
             </li>
             </Link>
-            <Link href="#">
-            <li className="flex justify-center items-center gap-2 hover:text-yellow-400 cursor-pointer transition-colors duration-300">
-              PROJECTS <FaChevronDown size={10} />
+            <Link href="/projects">
+            <li className="flex justify-center items-center gap-2 hover:text-yellow-400 cursor-pointer relative group">
+              PROJECTS
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
             </li>
             </Link>
             <Link href="/services">
-            <li className={`flex justify-center items-center gap-2 cursor-pointer transition-colors duration-300 ${
+            <li className={`flex justify-center items-center gap-2 cursor-pointer relative group ${
               isActivePage('/services') ? 'text-yellow-400' : 'hover:text-yellow-400'
             }`}>
               SERVICES
-              <FaChevronDown size={10} />
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
             </li>
             </Link>
             <Link href="#">
-            <li className="hover:text-yellow-400 cursor-pointer transition-colors duration-300">CAREERS</li>
+            <li className="hover:text-yellow-400 cursor-pointer relative group">
+              CAREERS
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
+            </li>
             </Link>
             <Link href="#">
-            <li className="hover:text-yellow-400 cursor-pointer transition-colors duration-300">
+            <li className="hover:text-yellow-400 cursor-pointer relative group">
               NEWS RELEASE
+              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
             </li>
             </Link>
           </ul>
