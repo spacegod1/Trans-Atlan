@@ -76,7 +76,7 @@ export default function Navbar() {
               <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
             </li>
             </Link>
-            <Link href="#">
+            <Link href="/careers">
             <li className="hover:text-yellow-400 cursor-pointer relative group">
               CAREERS
               <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></span>
@@ -117,19 +117,21 @@ export default function Navbar() {
               ABOUT
             </li>
             </Link>
-            <Link href="#">
+            <Link href="/projects" onClick={handleLinkClick}>
             <li className="flex items-center gap-2 hover:text-yellow-400 cursor-pointer transition-colors duration-300">
-              PROJECTS <FaChevronDown size={10} />
+              PROJECTS 
+              {/* <FaChevronDown size={10} /> */}
             </li>
             </Link>
             <Link href="/services" onClick={handleLinkClick}>
             <li className={`flex items-center gap-2 cursor-pointer transition-colors duration-300 ${
               isActivePage('/services') ? 'text-yellow-400' : 'hover:text-yellow-400'
             }`}>
-              SERVICES <FaChevronDown size={10} />
+              SERVICES 
+              {/* <FaChevronDown size={10} /> */}
             </li>
             </Link>
-            <Link href="#">
+            <Link href="/careers" onClick={handleLinkClick}>
             <li className="hover:text-yellow-400 cursor-pointer transition-colors duration-300">CAREERS</li>
             </Link>
             <Link href="#">
