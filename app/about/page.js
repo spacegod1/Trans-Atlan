@@ -24,21 +24,21 @@ const executives = [
         position: "Chief Executive Officer",
         image: "/femi.jpg",
         linkedin: "#",
-        bio: "25+ years of experience in energy sector leadership, driving sustainable growth and innovation."
+        bio: "Over 25 years of executive leadership in global Oil & Gas operations across Africa, Europe, and North America. Proven track record in strategic growth, operational excellence, and developing sustainable energy solutions. Expert in upstream and downstream operations with focus on African markets."
     },
     {
         name: "Ochuko Erivwo",
         position: "Chief Technical Director",
         image: "/ochuko.jpg",
         linkedin: "#",
-        bio: "Expert in operational excellence with proven track record in optimizing oil & gas operations."
+        bio: "Over 22 years of global upstream Oil & Gas experience with industry leaders like Shell and Schlumberger. Specialized in complex well engineering, deepwater projects, and integrated services delivery. Distinguished technical expert with multiple published papers at international SPE conferences."
     },
     {
         name: "Ferdinand Agbottah",
-        position: "Business Development Manager",
+        position: "Business Development Director",
         image: "/Agbottah.jpg",
         linkedin: "#",
-        bio: "Pioneer in implementing cutting-edge technologies for energy exploration and production."
+        bio: "Accomplished business development leader with extensive experience in international energy markets. Successfully facilitated major oil & gas projects including a $300M development in West Africa. Expert in strategic partnerships, financial advisory, and workforce development across global markets. Proven track record in driving business growth and stakeholder relationships."
     }
 ];
 

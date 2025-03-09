@@ -12,6 +12,7 @@ import Engineer from "../public/petroleum_engineer.jpg";
 import { Poppins } from "next/font/google";
 import News from "../public/engineer.jpg";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ const poppins = Poppins({
 });
 
 export default function Home() {
+  const router = useRouter();
   const images = useMemo(
     () => ["/oil-rig-off.jpg", "/oil-rig-on.jpg", "/oil-rig-landscape.jpg"],
     []
@@ -134,7 +136,8 @@ export default function Home() {
         >
           Transforming Global Energy Resources
         </h3>
-        <button
+        <button 
+          onClick={() => router.push("/services")}
           className={`${poppins.className} px-4 sm:px-6 py-2 sm:py-3 
           flex justify-center items-center bg-[#D84040] rounded-3xl 
           mt-4 gap-3 sm:gap-5 
@@ -238,7 +241,7 @@ export default function Home() {
           <h3 className={`${montserrat.className} text-3xl mb-5 `}>
             Our Operations
           </h3>
-          <p className={`${poppins.className}`}>
+          <p className={`${poppins.className} text-center md:text-left`}>
             TransAtlan Energy delivers comprehensive solutions across three key
             sectors: Exploration & Production (E&P), Engineering Services, and
             Consulting. Our E&P division handles everything from exploration to
@@ -249,7 +252,10 @@ export default function Home() {
             sector.
           </p>
 
-          <button className="px-4 py-3 flex justify-center items-center bg-[#D84040] rounded-3xl mt-6 gap-5 hover:bg-transparent hover:border hover:border-[#D84040] transition-all duration-500 focus:outline-none mx-auto lg:mx-0">
+          <button 
+            onClick={() => router.push("/services")}
+           className="px-4 py-3 flex justify-center items-center bg-[#D84040] rounded-3xl mt-6 gap-5 hover:bg-transparent hover:border hover:border-[#D84040] transition-all duration-500 focus:outline-none mx-auto lg:mx-0"
+          >
             <FaArrowRightLong size={15} /> Explore Our Services
           </button>
         </div>
@@ -273,20 +279,24 @@ export default function Home() {
             >
               {`Small Steps: TransAtlan Energy's Journey to Zero Carbon`}
             </h5>
-            <button className={`${poppins.className} text-sm border-[#D84040] border mt-4 p-3 rounded-full`}>
-              <FaArrowRightLong size={15} />
-            </button>
+            <div className="flex">
+              <button className={`${poppins.className} flex justify-center items-center gap-4 text-sm border-[#D84040] border mt-4 p-3 rounded-full hover:bg-[#D84040] hover:text-white transition-all duration-300`}>
+                <FaArrowRightLong size={15} /> Read More
+              </button>
+            </div>
           </div>
           <div className="w-full sm:w-[20rem] max-w-[20rem]">
             <Image src={News} alt="News" className="w-full h-auto" />
-            <h5
+            <h5 
               className={`${montserrat.className} text-sm my-4 text-[#D84040]`}
             >
               {`Innovating to produce to tomorrow's energy solutions`}
             </h5>
-              <button className={`${poppins.className} text-sm border-[#D84040] border mt-4 p-3 rounded-full`}>
-              <FaArrowRightLong size={15} />
-            </button>
+            <div className="flex">
+              <button className={`${poppins.className} flex justify-center items-center gap-4 text-sm border-[#D84040] border mt-4 p-3 rounded-full hover:bg-[#D84040] hover:text-white transition-all duration-300`}>
+                <FaArrowRightLong size={15} /> Read More    
+              </button>
+            </div>
           </div>
           <div className="w-full sm:w-[20rem] max-w-[20rem]">
             <Image src={News} alt="News" className="w-full h-auto" />
@@ -295,9 +305,11 @@ export default function Home() {
             >
               LNG, deep offshore: A world-renowned expertise.
             </h5>
-              <button className={`${poppins.className} text-sm border-[#D84040] border mt-4 p-3 rounded-full`}>
-              <FaArrowRightLong size={15} />
-            </button>
+            <div className="flex">
+              <button className={`${poppins.className} flex justify-center items-center gap-4 text-sm border-[#D84040] border mt-4 p-3 rounded-full hover:bg-[#D84040] hover:text-white transition-all duration-300`}>
+                <FaArrowRightLong size={15} /> Read More
+              </button>
+            </div>
           </div>
         </div>
       </section>
