@@ -73,7 +73,12 @@ export default function Projects() {
     return (
         <main className="min-h-screen bg-white">
             {/* Hero Section */}
-            <section className="relative h-[40vh] lg:h-[50vh] min-h-[300px] bg-gradient-to-br from-[#23486A] to-[#1a3550]">
+            <section className="relative h-[40vh] lg:h-[50vh] min-h-[300px]">
+                <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: 'url("/offshore-rig-view.jpg")' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#23486A]/90 to-[#1a3550]/90" />
                 <div className="relative h-full flex items-center justify-center px-4">
                     <div className="text-center text-white">
                         <motion.div
@@ -158,7 +163,7 @@ export default function Projects() {
                             reducing costs, and implementing innovative solutions across diverse energy projects.
                         </p>
                     </motion.div>
-                </div>
+        </div>
             </section>
         </main>
     );
