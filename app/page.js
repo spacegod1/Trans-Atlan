@@ -135,12 +135,12 @@ export default function Home() {
           Transforming Global Energy Resources
         </h3>
         <button
-          className="px-4 sm:px-6 py-2 sm:py-3 
+          className={`${poppins.className} px-4 sm:px-6 py-2 sm:py-3 
           flex justify-center items-center bg-[#D84040] rounded-3xl 
           mt-4 gap-3 sm:gap-5 
           hover:bg-transparent hover:border hover:border-[#D84040] 
           transition-all duration-500 focus:outline-none
-          mx-auto sm:mx-0"
+          mx-auto sm:mx-0`}
         >
           <FaArrowRightLong size={15} /> Our Services
         </button>
@@ -273,7 +273,7 @@ export default function Home() {
             >
               {`Small Steps: TransAtlan Energy's Journey to Zero Carbon`}
             </h5>
-            <button className="text-sm border-[#D84040] border mt-4 p-3 rounded-full">
+            <button className={`${poppins.className} text-sm border-[#D84040] border mt-4 p-3 rounded-full`}>
               <FaArrowRightLong size={15} />
             </button>
           </div>
@@ -284,7 +284,7 @@ export default function Home() {
             >
               {`Innovating to produce to tomorrow's energy solutions`}
             </h5>
-            <button className="text-sm border-[#D84040] border mt-4 p-3 rounded-full">
+              <button className={`${poppins.className} text-sm border-[#D84040] border mt-4 p-3 rounded-full`}>
               <FaArrowRightLong size={15} />
             </button>
           </div>
@@ -295,7 +295,7 @@ export default function Home() {
             >
               LNG, deep offshore: A world-renowned expertise.
             </h5>
-            <button className="text-sm border-[#D84040] border mt-4 p-3 rounded-full">
+              <button className={`${poppins.className} text-sm border-[#D84040] border mt-4 p-3 rounded-full`}>
               <FaArrowRightLong size={15} />
             </button>
           </div>
