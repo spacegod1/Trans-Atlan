@@ -261,54 +261,51 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white text-black items-center py-14">
-        <div className="w-full px-4 sm:px-8 lg:px-[14rem] flex justify-between items-center">
-          <h3 className={`${montserrat.className} text-xl sm:text-2xl`}>
-            Latest News
-          </h3>
-          <button className="px-3 sm:px-4 py-2 sm:py-3 flex justify-center items-center border border-[#D84040] rounded-3xl gap-2 sm:gap-3 transition-all duration-500 focus:outline-none">
-            <FaArrowRightLong size={15} /> More News
-          </button>
-        </div>
+      <section className="bg-white text-black py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h3 className={`${montserrat.className} text-2xl sm:text-3xl lg:text-4xl text-black mb-4`}>
+              Latest News
+            </h3>
+            {/* <div className="w-20 h-1 bg-[#D84040] mx-auto"></div> */}
+          </div>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-[4rem] mt-8 sm:mt-[5rem] px-4 sm:px-8">
-          <div className="w-full sm:w-[20rem] max-w-[20rem]">
-            <Image src={News} alt="News" className="w-full h-auto" />
-            <h5
-              className={`${montserrat.className} text-sm my-4 text-[#D84040]`}
-            >
-              {`Small Steps: TransAtlan Energy's Journey to Zero Carbon`}
-            </h5>
-            <div className="flex">
-              <button className={`${poppins.className} flex justify-center items-center gap-4 text-sm border-[#D84040] border mt-4 p-3 rounded-full hover:bg-[#D84040] hover:text-white transition-all duration-300`}>
-                <FaArrowRightLong size={15} /> Read More
-              </button>
-            </div>
-          </div>
-          <div className="w-full sm:w-[20rem] max-w-[20rem]">
-            <Image src={News} alt="News" className="w-full h-auto" />
-            <h5 
-              className={`${montserrat.className} text-sm my-4 text-[#D84040]`}
-            >
-              {`Innovating to produce to tomorrow's energy solutions`}
-            </h5>
-            <div className="flex">
-              <button className={`${poppins.className} flex justify-center items-center gap-4 text-sm border-[#D84040] border mt-4 p-3 rounded-full hover:bg-[#D84040] hover:text-white transition-all duration-300`}>
-                <FaArrowRightLong size={15} /> Read More    
-              </button>
-            </div>
-          </div>
-          <div className="w-full sm:w-[20rem] max-w-[20rem]">
-            <Image src={News} alt="News" className="w-full h-auto" />
-            <h5
-              className={`${montserrat.className} text-sm my-4 text-[#D84040]`}
-            >
-              LNG, deep offshore: A world-renowned expertise.
-            </h5>
-            <div className="flex">
-              <button className={`${poppins.className} flex justify-center items-center gap-4 text-sm border-[#D84040] border mt-4 p-3 rounded-full hover:bg-[#D84040] hover:text-white transition-all duration-300`}>
-                <FaArrowRightLong size={15} /> Read More
-              </button>
+          {/* Coming Soon Content */}
+          <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-lg p-12 lg:p-20 max-w-5xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+              {/* Left Content */}
+              <div className="lg:w-1/2 text-center lg:text-left">
+                <h4 className={`${montserrat.className} text-2xl lg:text-3xl text-[#23486A] mb-6`}>
+                  News Updates Coming Soon
+                </h4>
+                <p className={`${poppins.className} text-gray-600 mb-8 lg:pr-8`}>
+                  Stay tuned for the latest updates and news about TransAtlan {`Energy's`} projects, 
+                  innovations, and contributions to the energy sector in Africa.
+                </p>
+              </div>
+
+              {/* Right Content - Newsletter Form */}
+              <div className="lg:w-1/2 w-full">
+                <form className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                  <div className="flex flex-col gap-4">
+                    <input 
+                      type="email" 
+                      placeholder="Enter your email address" 
+                      className={`${poppins.className} w-full px-6 py-4 border border-gray-200 rounded-full focus:outline-none focus:border-[#D84040] focus:ring-1 focus:ring-[#D84040] bg-gray-50`}
+                    />
+                    <button 
+                      type="submit"
+                      className="w-full px-6 py-4 bg-[#D84040] text-white rounded-full hover:bg-[#23486A] transition-all duration-300 flex items-center justify-center gap-2 font-medium"
+                    >
+                      Notify Me
+                    </button>
+                  </div>
+                  <p className={`${poppins.className} text-xs text-gray-500 text-center mt-4`}>
+                    {`We'll`} notify you when we have news to share. No spam, we promise!
+                  </p>
+                </form>
+              </div>
             </div>
           </div>
         </div>
