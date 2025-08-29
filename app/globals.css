@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.background {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.28)),
-    url("../public/oil-rig-off.jpg");
-  background-position: 44% 58%;
-  background-size: cover;
-  /* z-index: -1; */
-}
 
 /* Move scrollbar styles to target the whole page */
 ::-webkit-scrollbar {

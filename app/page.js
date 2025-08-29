@@ -8,11 +8,12 @@ import {
 } from "react-icons/fa6";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import Engineer from "../public/petroleum_engineer.jpg";
+import Air from "../public/air-freight.jpg";
 import { Poppins } from "next/font/google";
 import News from "../public/engineer.jpg";
 import React from "react";
 import { useRouter } from "next/navigation";
+import AnimatedText from "./components/AnimatedText";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -29,12 +30,13 @@ const poppins = Poppins({
 export default function Home() {
   const router = useRouter();
   const images = useMemo(
-    () => ["/oil-rig-off.jpg", "/oil-rig-on.jpg", "/oil-rig-landscape.jpg"],
+    () => ["/warehouse_packages2.jpg", "/sea_freight.jpg", "/warehouse.jpg"],
     []
   );
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const progressRef = useRef(0);
   const startTimeRef = useRef(null);
   const duration = 10000; // 10 seconds for full progress
@@ -43,18 +45,18 @@ export default function Home() {
     () => [
       {
         title:
-          "Leading provider of offshore drilling solutions in 30+ countries.",
+          "Leading provider of secure warehousing solutions across 30+ countries.",
         highlight: "30+ countries",
       },
       {
-        title: "We have over 80 years of experience in building pipe systems.",
-        highlight: "over 80 years",
+        title: "We have over 15 years of experience in global logistics and security.",
+        highlight: "over 15 years",
       },
 
       {
         title:
-          "Committed to sustainable energy practices with zero carbon goals.",
-        highlight: "zero carbon",
+          "Advanced sea freight services with 24/7 cargo monitoring and protection.",
+        highlight: "24/7 cargo monitoring",
       },
     ],
     []
@@ -85,7 +87,11 @@ export default function Home() {
       if (newProgress >= 100) {
         setProgress(0);
         startTimeRef.current = null;
-        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setCurrentImageIndex((prev) => (prev + 1) % images.length);
+          setTimeout(() => setIsTransitioning(false), 100);
+        }, 200);
       } else {
         setProgress(newProgress);
         progressRef.current = requestAnimationFrame(updateProgress);
@@ -108,42 +114,96 @@ export default function Home() {
     }
     setProgress(0);
     startTimeRef.current = null;
+    setIsTransitioning(true);
 
-    // Update the image index
-    if (direction === "next") {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    } else {
-      setCurrentImageIndex(
-        (prev) => (prev - 1 + images.length) % images.length
-      );
-    }
+    // Add transition delay for smooth effect
+    setTimeout(() => {
+      // Update the image index
+      if (direction === "next") {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      } else {
+        setCurrentImageIndex(
+          (prev) => (prev - 1 + images.length) % images.length
+        );
+      }
+      setTimeout(() => setIsTransitioning(false), 100);
+    }, 200);
   };
 
   return (
-    <section className="relative h-full pt-6 text-white scrollbar-custom overflow-y-auto">
-      {/* Hero Text Section */}
-      <div
-        className="absolute z-10 px-4 sm:px-10 
-        top-60 sm:top-40 lg:top-80 
-        left-1/2 sm:left-6 lg:left-6 
-        transform -translate-x-1/2 sm:translate-x-0
-        w-full sm:w-auto
-        text-center sm:text-left"
-      >
-        <h3
-          className={`text-2xl sm:text-[4rem] lg:text-[2.5rem] ${montserrat.className} 
-          max-w-[20rem] sm:max-w-none mx-auto sm:mx-0`}
-        >
-          Transforming Global Energy Resources
+    <section className="relative h-full pt-24 text-white scrollbar-custom overflow-y-auto">
+      {/* Hero Text Section - Mobile First */}
+      <div className="block sm:hidden absolute z-10 top-32 left-0 w-full h-[calc(80dvh-2rem)] flex flex-col justify-center items-center px-4 pointer-events-none">
+        <div className="pointer-events-auto flex flex-col items-center space-y-6">
+        <h3 className={`text-4xl leading-tight font-black text-white max-w-[320px] text-center ${montserrat.className}`}>
+          <AnimatedText
+            text="Securing Cargo,"
+            className="block"
+            tag="span"
+            delay={0.08}
+            duration={0.8}
+            ease="power3.out"
+          />
+          <AnimatedText
+            text="Delivering Trust."
+            className="block"
+            tag="span"
+            delay={0.12}
+            duration={0.8}
+            ease="power3.out"
+          />
         </h3>
         <button 
           onClick={() => router.push("/services")}
-          className={`${poppins.className} px-4 sm:px-6 py-2 sm:py-3 
-          flex justify-center items-center bg-[#D84040] rounded-3xl 
-          mt-4 gap-3 sm:gap-5 
-          hover:bg-transparent hover:border hover:border-[#D84040] 
+          className={`${poppins.className} px-8 py-3 
+          flex justify-center items-center bg-[#D4A574] rounded-3xl 
+          gap-3 text-white font-medium shadow-lg text-base
+          hover:bg-transparent hover:border hover:border-[#D4A574] 
           transition-all duration-500 focus:outline-none
-          mx-auto sm:mx-0`}
+          w-auto min-w-[180px]`}
+        >
+          <FaArrowRightLong size={15} /> Our Services
+        </button>
+        </div>
+      </div>
+
+      {/* Hero Text Section - Desktop */}
+      <div
+        className="hidden sm:block absolute z-50 px-10 
+        top-48 lg:top-80 
+        left-6 lg:left-6 
+        w-auto
+        text-left
+        transition-all duration-300 ease-in-out"
+        style={{
+          opacity: isTransitioning ? 0.8 : 1,
+        }}
+      >
+        <h3 className={`text-[4rem] lg:text-[2.5rem] ${montserrat.className} leading-tight font-black text-white text-left`}>
+          <AnimatedText
+            text="Securing Cargo,"
+            className="block"
+            tag="span"
+            delay={0.1}
+            duration={0.8}
+            ease="power3.out"
+          />
+          <AnimatedText
+            text="Delivering Trust."
+            className="block"
+            tag="span"
+            delay={0.15}
+            duration={0.8}
+            ease="power3.out"
+          />
+        </h3>
+        <button 
+          onClick={() => router.push("/services")}
+          className={`${poppins.className} px-6 py-3 
+          flex justify-center items-center bg-[#D4A574] rounded-3xl 
+          mt-6 gap-5 text-white font-medium shadow-lg
+          hover:bg-transparent hover:border hover:border-[#D4A574] 
+          transition-all duration-500 focus:outline-none`}
         >
           <FaArrowRightLong size={15} /> Our Services
         </button>
@@ -152,10 +212,11 @@ export default function Home() {
       {/* Background Image Section */}
       <div
         className="w-full lg:w-[76%] h-[90dvh] 
-        absolute right-0 bg-cover bg-center transition-all duration-500"
+        absolute right-0 bg-cover bg-center transition-all duration-500 ease-in-out"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.28)), url(${images[currentImageIndex]})`,
           backgroundPosition: "center",
+          opacity: isTransitioning ? 0.8 : 1,
         }}
       >
         <div className="relative h-full">
@@ -163,19 +224,24 @@ export default function Home() {
           <div
             className="absolute right-4 bottom-8 
             text-black w-[90%] sm:w-96 p-6 sm:p-8 
-            bg-gray-50 shadow-sm rounded-sm
+            bg-[#FAF8F4] shadow-sm rounded-sm
             left-1/2 transform -translate-x-1/2 
-            sm:left-auto sm:transform-none"
+            sm:left-auto sm:transform-none
+            transition-all duration-300 ease-in-out"
             style={{
               borderBottom: "1px solid #e5e7eb",
-              backgroundImage: `linear-gradient(to right, #dc2626 ${progress}%, #e5e7eb ${progress}%)`,
+              backgroundImage: `linear-gradient(to right, #D4A574 ${progress}%, #e5e7eb ${progress}%)`,
               backgroundSize: "100% 2px",
               backgroundPosition: "bottom",
               backgroundRepeat: "no-repeat",
+              opacity: isTransitioning ? 0.3 : 1,
             }}
           >
             <h4
-              className={`text-base sm:text-xl font-normal mb-6 ${poppins.className}`}
+              className={`text-base sm:text-xl font-normal mb-6 ${poppins.className} transition-opacity duration-300 ease-in-out`}
+              style={{
+                opacity: isTransitioning ? 0.2 : 1,
+              }}
             >
               {textContent[currentImageIndex].title
                 .split(textContent[currentImageIndex].highlight)
@@ -185,7 +251,7 @@ export default function Home() {
                   ) : (
                     <React.Fragment key={index}>
                       {part}
-                      <span className="text-red-600 font-medium">
+                      <span className="text-[#6B5B47] font-medium">
                         {textContent[currentImageIndex].highlight}
                       </span>
                     </React.Fragment>
@@ -193,7 +259,12 @@ export default function Home() {
                 )}
             </h4>
 
-            <div className="flex gap-6 justify-center sm:justify-start">
+            <div 
+              className="flex gap-6 justify-center sm:justify-start transition-opacity duration-300 ease-in-out"
+              style={{
+                opacity: isTransitioning ? 0.2 : 1,
+              }}
+            >
               <button
                 onClick={() => handleNav("prev")}
                 className="hover:text-gray-600 transition-colors p-2"
@@ -216,97 +287,88 @@ export default function Home() {
 
       <div className="px-4 sm:px-8 md:px-16 lg:px-[18rem] bg-white text-black py-8 sm:py-12 lg:py-[6rem] text-center">
         <h3
-          className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-[#D84040] my-4 ${montserrat.className}`}
+          className={`text-2xl sm:text-3xl lg:text-4xl font-bold text-[#6B5B47] my-4 ${montserrat.className}`}
         >
-          Pioneering Oil and Gas Solutions Across Africa
+          Pioneering Global Security and Shipping Solutions
         </h3>
         <p
           className={`mt-4 text-sm sm:text-base ${poppins.className} max-w-4xl mx-auto`}
         >
-          TransAtlan Energy specializes in innovative oil and gas solutions
-          across the complete energy value chain. With state-of-the-art
-          technology and industry-leading expertise, we deliver exceptional
-          results in exploration, production, and distribution while maintaining
-          the highest standards of safety and environmental responsibility.
+          AlderVault Security & Shipping specializes in comprehensive logistics
+          and security solutions across the complete supply chain. With state-of-the-art
+          warehousing facilities and industry-leading security protocols, we deliver exceptional
+          results in cargo protection, secure storage, and global shipping while maintaining
+          the highest standards of safety and reliability.
         </p>
       </div>
 
-      <section className="flex flex-col lg:flex-row justify-center items-center px-4 sm:px-8 py-12">
+      <section className="px-4 sm:px-8 py-12 text-center">
         <Image
-          src={Engineer}
-          alt="Petroleum engineer"
-          className="h-[20rem] sm:h-[25rem] lg:h-[30rem]"
+          src={Air}
+          alt="Shipping operations"
+          className="h-[20rem] sm:h-[25rem] lg:h-[30rem] mx-auto mb-8"
         />
-        <div className="px-[4rem] mt-8 lg:mt-0">
-          <h3 className={`${montserrat.className} text-3xl mb-5 `}>
-            Our Operations
-          </h3>
-          <p className={`${poppins.className} text-center md:text-left`}>
-            TransAtlan Energy delivers comprehensive solutions across three key
-            sectors: Exploration & Production (E&P), Engineering Services, and
-            Consulting. Our E&P division handles everything from exploration to
-            abandonment, while our Engineering team provides end-to-end services
-            including feasibility studies, FEED, and detailed engineering
-            design. Our Consulting arm offers specialized advisory services,
-            project development support, and manpower solutions for the energy
-            sector.
-          </p>
+        <h3 className={`${montserrat.className} text-3xl mb-5 text-white`}>
+          Our Operations
+        </h3>
+        <p className={`${poppins.className} text-white leading-relaxed max-w-4xl mx-auto`}>
+          AlderVault Security & Shipping provides the finest secure logistics solutions 
+          including <span className="text-[#D4A574] font-medium">Sea Freight</span>, 
+          <span className="text-[#D4A574] font-medium"> Air Freight</span>, and 
+          <span className="text-[#D4A574] font-medium"> Vault Storage</span> of valuable 
+          items (Gold, Diamonds, Documents, etc.). Our comprehensive services include 
+          24/7 monitoring, private security details, and specialized protection for 
+          high-value cargo across global trade routes.
+        </p>
 
-          <button 
-            onClick={() => router.push("/services")}
-           className="px-4 py-3 flex justify-center items-center bg-[#D84040] rounded-3xl mt-6 gap-5 hover:bg-transparent hover:border hover:border-[#D84040] transition-all duration-500 focus:outline-none mx-auto lg:mx-0"
-          >
-            <FaArrowRightLong size={15} /> Explore Our Services
-          </button>
-        </div>
+        <button 
+          onClick={() => router.push("/services")}
+         className="px-6 py-3 flex justify-center items-center bg-[#D4A574] rounded-3xl mt-8 gap-3 hover:bg-transparent hover:border hover:border-[#D4A574] transition-all duration-500 focus:outline-none mx-auto text-white font-medium"
+        >
+          <FaArrowRightLong size={15} /> Explore Our Services
+        </button>
       </section>
 
-      <section className="bg-white text-black py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+      <section className="bg-white text-black py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12 text-center">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h3 className={`${montserrat.className} text-2xl sm:text-3xl lg:text-4xl text-black mb-4`}>
-              Latest News
+          <div className="mb-12">
+            <h3 className={`${montserrat.className} text-2xl sm:text-3xl lg:text-4xl text-[#6B5B47] mb-6`}>
+              Stay Updated
             </h3>
-            {/* <div className="w-20 h-1 bg-[#D84040] mx-auto"></div> */}
+            <p className={`${poppins.className} text-gray-600 text-lg max-w-2xl mx-auto`}>
+              Get the latest updates on secure logistics solutions, industry insights, 
+              and AlderVault's global shipping innovations delivered to your inbox.
+            </p>
           </div>
 
-          {/* Coming Soon Content */}
-          <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-lg p-12 lg:p-20 max-w-5xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-              {/* Left Content */}
-              <div className="lg:w-1/2 text-center lg:text-left">
-                <h4 className={`${montserrat.className} text-2xl lg:text-3xl text-[#23486A] mb-6`}>
-                  News Updates Coming Soon
-                </h4>
-                <p className={`${poppins.className} text-gray-600 mb-8 lg:pr-8`}>
-                  Stay tuned for the latest updates and news about TransAtlan {`Energy's`} projects, 
-                  innovations, and contributions to the energy sector in Africa.
-                </p>
+          {/* Newsletter Form */}
+          <div className="bg-gradient-to-br from-[#FAF8F4] to-[#F5F1E8] rounded-3xl shadow-lg p-6 lg:p-10 max-w-2xl mx-auto">
+            <h4 className={`${montserrat.className} text-xl lg:text-2xl text-[#6B5B47] mb-6`}>
+              Newsletter Subscription
+            </h4>
+            
+            <form className="space-y-6">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email address" 
+                  className={`${poppins.className} flex-1 px-6 py-4 border border-gray-200 rounded-full focus:outline-none focus:border-[#D4A574] focus:ring-2 focus:ring-[#D4A574]/20 bg-white`}
+                />
+                <button 
+                  type="submit"
+                  className="px-8 py-4 bg-[#D4A574] text-white rounded-full hover:bg-[#C19B65] transition-all duration-300 flex items-center justify-center gap-2 font-medium whitespace-nowrap"
+                >
+                  Subscribe Now
+                </button>
               </div>
-
-              {/* Right Content - Newsletter Form */}
-              <div className="lg:w-1/2 w-full">
-                <form className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                  <div className="flex flex-col gap-4">
-                    <input 
-                      type="email" 
-                      placeholder="Enter your email address" 
-                      className={`${poppins.className} w-full px-6 py-4 border border-gray-200 rounded-full focus:outline-none focus:border-[#D84040] focus:ring-1 focus:ring-[#D84040] bg-gray-50`}
-                    />
-                    <button 
-                      type="submit"
-                      className="w-full px-6 py-4 bg-[#D84040] text-white rounded-full hover:bg-[#23486A] transition-all duration-300 flex items-center justify-center gap-2 font-medium"
-                    >
-                      Notify Me
-                    </button>
-                  </div>
-                  <p className={`${poppins.className} text-xs text-gray-500 text-center mt-4`}>
-                    {`We'll`} notify you when we have news to share. No spam, we promise!
-                  </p>
-                </form>
+              
+              <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
+                <span className={poppins.className}>
+                  No spam, unsubscribe anytime. We respect your privacy.
+                </span>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>

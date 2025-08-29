@@ -4,7 +4,7 @@ import { Montserrat, Poppins } from "next/font/google";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import OilBarrels from "../../public/oil-barrels.jpg";
+import Containers from "../../public/containers.jpg";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -20,55 +20,64 @@ const poppins = Poppins({
 
 const services = [
     {
-        title: "Exploration & Production",
-        description: "Comprehensive end-to-end solutions for oil and gas exploration, development, and production operations. We optimize every phase of the E&P lifecycle through integrated services and cutting-edge technology.",
-        image: "/oil-pump.jpg",
+        title: "International Logistics",
+        description: "Comprehensive global shipping and logistics solutions for businesses of all sizes. We provide end-to-end delivery services with real-time tracking, customs clearance, and international trade expertise across air and sea freight networks.",
+        image: "/air_delivery.jpg",
         subServices: [
-            "Exploration & Prospecting",
-            "Field Development Planning",
-            "Well Construction & Management",
-            "Production Operations & Optimization",
-            "Reservoir Studies & Management",
-            "Engineering & Facilities Management",
-            "Hydrocarbon Maturation",
-            "Concepts Development & Selection",
-            "Integrated Field Studies"
+            "Air Freight Services",
+            "Sea Freight Operations", 
+            "Heavy Cargo Deliveries",
+            "Express International Delivery",
+            "International Trade Consulting",
+            "Cross-Border E-commerce Solutions"
         ]
     },
     {
-        title: "Engineering & Asset Integrity",
-        description: "Expert engineering solutions and asset management services.",
-        image: "/pipes.jpg",
+        title: "Valuable Asset Protection",
+        description: "Specialized secure transport and storage solutions for high-value items including precious metals, diamonds, documents, and sensitive cargo requiring maximum security protocols and comprehensive insurance coverage.",
+        image: "/secure-1.jpg",
         subServices: [
-            "Conceptual Design",
-            "Front-End Engineering Design (FEED)",
-            "Detailed Engineering Design (DED)",
-            "Project Management Services",
-            "Facilities Integrity Assurance"
+            "Precious Metals Transport",
+            "Diamond & Jewelry Security",
+            "Important Document Protection",
+            "High-Value Cargo Insurance",
+            "Armored Vehicle Transport",
+            "Climate-Controlled Storage",
+            "Chain of Custody Documentation",
+            "Biometric Access Control",
+            "24/7 Monitoring Systems"
         ]
     },
     {
-        title: "Manpower Services",
-        description: "Professional workforce solutions and development programs.",
-        image: "/oil-workers.jpg",
+        title: "Door-to-Door Services",
+        description: "Complete end-to-end delivery solutions with full accountability from pickup to final destination. Our comprehensive service includes professional packaging, careful handling, real-time tracking, and specialized final mile delivery.",
+        image: "/tracking.jpg",
         subServices: [
-            "Manpower Development",
-            "Manpower Placement",
-            "Training & Development",
-            "Capacity Building"
+            "Same-Day Delivery",
+            "Next-Day Express Service",
+            "White Glove Delivery",
+            "Installation & Setup Services",
+            "Reverse Logistics",
+            "Proof of Delivery Systems",
+            "Real-Time GPS Tracking",
+            "Signature Confirmation",
+            "Packaging & Crating Services"
         ]
     },
     {
-        title: "Consulting",
-        description: "Strategic consulting and advisory services for energy sector.",
-        image: "/consult.jpg",
+        title: "Security Services",
+        description: "Professional security solutions for events, facilities, and specialized transport operations. Our trained security personnel provide comprehensive protection services tailored to your specific requirements and risk assessment needs.",
+        image: "/security.jpg",
         subServices: [
-            "Advisory Services",
-            "Due Diligence",
-            "Feasibility Studies",
-            "Transaction Support",
-            "Mid/Downstream Business Development",
-            "Gas & Power Projects Development Support"
+            "Safe Keeping & Vault Storage",
+            "Private Event Security",
+            "Secured Delivery Operations",
+            "Executive Protection Services",
+            "Facility Security Management",
+            "Risk Assessment & Consulting",
+            "24/7 Monitoring Services",
+            "Emergency Response Teams",
+            "Personal Security Details"
         ]
     }
 ];
@@ -80,20 +89,20 @@ export default function Services() {
             <section className="relative h-[40vh] lg:h-[60vh] min-h-[300px] bg-[#23486A] w-full overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
-                        src={OilBarrels}
-                        alt="Oil barrels in production facility"
+                        src={Containers}
+                        alt="Shipping containers"
                         fill
                         className="object-cover opacity-20"
                         priority
                     />
                 </div>
-                <div className="relative h-full flex items-center justify-center px-2 sm:px-4">
-                    <div className="text-center text-white w-full">
-                        <h1 className={`${montserrat.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6`}>
+                <div className="relative h-full flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-0">
+                    <div className="text-center text-white w-full max-w-5xl mx-auto">
+                        <h1 className={`${montserrat.className} text-4xl md:text-6xl lg:text-7xl mb-3 leading-tight font-bold`}>
                             Our Services
                         </h1>
-                        <p className={`${poppins.className} text-base sm:text-lg md:text-xl max-w-3xl mx-auto`}>
-                            Comprehensive solutions across the energy value chain
+                        <p className={`${poppins.className} text-md md:text-2xl max-w-4xl mx-auto leading-relaxed`}>
+                         Providing logistics and security solutions across the globe
                         </p>
                     </div>
                 </div>
@@ -165,17 +174,17 @@ export default function Services() {
             </section>
 
             {/* Why Choose TransAtlan Section */}
-            <section className="py-20 md:py-32 w-full bg-gradient-to-b from-white via-gray-50 to-white">
+            <section className="py-14 md:py-32 w-full bg-gradient-to-b from-white via-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
                         <span className={`${poppins.className} text-[#D84040] uppercase tracking-wider text-sm mb-4 block`}>
                             Why Choose Us
                         </span>
                         <h2 className={`${montserrat.className} text-3xl sm:text-4xl md:text-5xl text-[#23486A] mb-6`}>
-                            Setting the Standard in Energy Solutions
+                            Setting the Standard in Secure Logistics
                         </h2>
                         <p className={`${poppins.className} text-gray-600 text-lg`}>
-                            We combine technical excellence with deep industry knowledge to deliver exceptional results
+                            We combine advanced security protocols with global logistics expertise to deliver exceptional results
                         </p>
                     </div>
 
@@ -189,13 +198,13 @@ export default function Services() {
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#23486A] opacity-5 rounded-full transform translate-x-16 -translate-y-16 group-hover:scale-110 transition-transform duration-300"></div>
                             <div className="relative">
                                 <div className="w-14 h-14 bg-[#23486A] rounded-2xl flex items-center justify-center mb-6 transform rotate-3">
-                                    <span className="text-white text-2xl transform -rotate-3">⚡</span>
+                                    <span className="text-white text-2xl transform -rotate-3">🛡️</span>
                                 </div>
                                 <h3 className={`${montserrat.className} text-xl text-[#23486A] mb-4`}>
-                                    Technical Excellence
+                                    Advanced Security
                                 </h3>
                                 <p className={`${poppins.className} text-gray-600`}>
-                                    Leveraging cutting-edge technology and industry-leading expertise to deliver innovative solutions that exceed expectations.
+                                    State-of-the-art security protocols and tracking technology ensuring maximum protection for your valuable assets and cargo.
                                 </p>
                             </div>
                         </motion.div>
@@ -212,10 +221,10 @@ export default function Services() {
                                     <span className="text-white text-2xl transform rotate-3">👥</span>
                                 </div>
                                 <h3 className={`${montserrat.className} text-xl text-[#23486A] mb-4`}>
-                                    Customer Focus
+                                    Reliable Service
                                 </h3>
                                 <p className={`${poppins.className} text-gray-600`}>
-                                    Building lasting partnerships through deep understanding of client needs and delivering tailored solutions for optimal results.
+                                    Consistent, dependable logistics and security services with 24/7 support, real-time tracking, and transparent communication throughout.
                                 </p>
                             </div>
                         </motion.div>
@@ -232,10 +241,10 @@ export default function Services() {
                                     <span className="text-white text-2xl transform -rotate-3">🌍</span>
                                 </div>
                                 <h3 className={`${montserrat.className} text-xl text-[#23486A] mb-4`}>
-                                    African Focus
+                                    Global Reach
                                 </h3>
                                 <p className={`${poppins.className} text-gray-600`}>
-                                    Unparalleled understanding of African markets, committed to developing local capabilities and sustainable growth across the continent.
+                                    Extensive international network with local expertise, committed to providing seamless logistics and security solutions across all continents.
                                 </p>
                             </div>
                         </motion.div>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "../../public/TransAtlanLogo.png";
+import Logo from "../../public/aldervault_logo.png";
 import { Montserrat } from "next/font/google";
 import { Poppins } from "next/font/google";
 
@@ -27,23 +27,18 @@ export default function Footer() {
             <div className="mb-8 sm:mb-0 text-center sm:text-left">
               <Image
                 src={Logo}
-                alt="TransAtlan Energy"
-                className="w-[12rem] h-[6rem] mx-auto sm:mx-0"
+                alt="AlderVault"
+                className="w-[15rem] h-[14rem] mx-auto sm:mx-0"
               />
-              <h1
-                className={`${montserrat.className} text-md text-center text-[#D84040]`}
-              >
-                TransAtlan <span className="text-green-400">Energy</span>
-              </h1>
             </div>
 
             {/* Other columns wrapper */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-6">
-              {/* Empty column for spacing - hidden on mobile */}
+        
               <div className="hidden md:block"></div>
 
               {/* Solutions Column */}
-              <div>
+              {/* <div>
                 <h4 className="font-semibold text-lg mb-4">Solutions</h4>
                 <ul className="space-y-3">
                   <li>
@@ -72,10 +67,10 @@ export default function Footer() {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
               {/* Company Column */}
-              <div>
+              {/* <div>
                 <h4 className="font-semibold text-lg mb-4">Company</h4>
                 <ul className="space-y-3">
                   <li>
@@ -99,10 +94,10 @@ export default function Footer() {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
               {/* Legal Column */}
-              <div className="col-span-2 md:col-span-1">
+              {/* <div className="col-span-2 md:col-span-1">
                 <h4 className="font-semibold text-lg mb-4">Legal</h4>
                 <ul className="space-y-3">
                   <li>
@@ -121,7 +116,7 @@ export default function Footer() {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
